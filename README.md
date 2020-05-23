@@ -60,7 +60,7 @@ MenuRepository以及UserRepository使用jpa
 
 ### 請由Unit Test, 及Integration Test,提供驗證結果
 SpringBootTest測試結果
-![image](/doc/test.PNG)
+![image](/doc/tests.PNG)
 
 ### 需提供帳號，角色，清單查詢相關詢結果
 
