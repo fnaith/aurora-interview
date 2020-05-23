@@ -35,6 +35,7 @@ const ControlPanel = function () {
         <SelectTab label="Menu Control" key={'select-tab-menust-control'}/>
         <SelectTab label="User Info" key={'select-tab-menust-control'}/>
         <SelectTab label="Option" key={'select-tab-option'}/>
+        <SelectTab label="Github" key={'select-tab-github'}/>
       </SelectTabs>
       <SelectPanel expanded={tabValue === 0}>
         <CreateMenu />
@@ -47,6 +48,9 @@ const ControlPanel = function () {
       </SelectPanel>
       <SelectPanel expanded={tabValue === 3}>
         <Logout />
+      </SelectPanel>
+      <SelectPanel expanded={tabValue === 4}>
+        <a href="https://github.com/fnaith/aurora-interview">Link</a>
       </SelectPanel>
     </div>
   )

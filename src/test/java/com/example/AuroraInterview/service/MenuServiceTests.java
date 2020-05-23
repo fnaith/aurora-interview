@@ -36,7 +36,8 @@ public class MenuServiceTests {
 
     @Test
     public void givenMenus_whenSave_thenGetAllOk() {
-        List<io.swagger.model.Menu> bodies1 = menuService.listMenu().getBody();
+        String userName = "";
+        List<io.swagger.model.Menu> bodies1 = menuService.listMenu(userName).getBody();
 
         String name = String.valueOf((new Random()).nextInt());
 
@@ -45,7 +46,7 @@ public class MenuServiceTests {
         List<io.swagger.model.Menu> bodies2 = menuService.createMenu(IntStream.range(0, (new Random()).nextInt() % 20)
                 .mapToObj(i -> body).collect(Collectors.toList())).getBody();
 
-        List<io.swagger.model.Menu> bodies3 = menuService.listMenu().getBody();
+        List<io.swagger.model.Menu> bodies3 = menuService.listMenu(userName).getBody();
         assertEquals(bodies3.size(), bodies1.size() + bodies2.size());
     }
 

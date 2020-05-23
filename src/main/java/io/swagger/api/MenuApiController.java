@@ -44,7 +44,7 @@ public class MenuApiController implements MenuApi {
 
     @Override
     public ResponseEntity<List<Menu>> listMenu() {
-        return menuService.listMenu();
+        return menuService.listMenu(getUserName());
     }
 
     private String getUserName() {

@@ -170,9 +170,10 @@ public class MenuService {
         }
     }
 
-    public ResponseEntity<List<io.swagger.model.Menu>> listMenu() {
+    public ResponseEntity<List<io.swagger.model.Menu>> listMenu(String userName) {
         try {
-            return new ResponseEntity<>(menuRepository.findAll().stream().filter(menu -> isActive(menu))
+            return new ResponseEntity<>(menuRepository.findAll().stream()
+                    .filter(menu -> isActive(menu) && userName.equals(menu.getCreatedBy()))
                     .map(menu -> buildBody(menu)).collect(Collectors.toList()), HttpStatus.OK);
         } catch (Throwable throwable) {
             logger.error(throwable);
